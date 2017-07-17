@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Image from "../IndexCard/Image.jsx";
+import FavImage from "./FavImage.jsx";
 
 //Contains
 class FavCard extends Component {
@@ -9,8 +9,8 @@ class FavCard extends Component {
     return (
       <div className="columns is-multiline cards">
         {cardsArray.map((card) => {
-        return <div className="column is-one-quarter card">
-          <Image image={card.image}/>
+        return <div className="column is-1">
+          <FavImage image={card.image}/>
         </div>;
           })
         }

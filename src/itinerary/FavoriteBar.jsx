@@ -6,8 +6,8 @@ class FavoriteBar extends Component {
   render() {
     return (
       <footer className="footer">
-        <div className="container">
-          <div className="content has-text-centered">
+        <div className="columns">
+          <div className="column is-1 card">
             <FavCard />
           </div>
         </div>
