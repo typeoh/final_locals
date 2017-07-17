@@ -4,7 +4,6 @@ import Navbar from "./landing/Navbar.jsx";
 import Search from "./landing/Search.jsx";
 import Filter from "./landing/Filter.jsx"
 import Itinerary from "./itinerary/Itinerary.jsx"
-import FavoriteBar from "./itinerary/FavoriteBar.jsx"
 import FavCard from "./itinerary/FavCard.jsx"
 
 

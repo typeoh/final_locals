@@ -1,17 +1,16 @@
 import React, {Component} from 'react';
-import FavImage from "./FavImage.jsx";
+import FavCard from "./FavCard.jsx";
 
 //Contains
-class FavCard extends Component {
+class FavBar extends Component {
   
   render() {
     const cardsArray = this.props.cards;
     return (
       <div className="columns is-multiline cards">
         {cardsArray.map((card) => {
-        return <div className="column is-2 has-text-centered">
-          <FavImage image={card.image}/>
-          <h6 className="title is-6">{card.title}</h6>
+        return <div className="column is-2">
+          <FavCard />
           </div>;
           })
         } 
@@ -19,6 +18,6 @@ class FavCard extends Component {
     );
   }
 }
-export default FavCard;
+export default FavBar;
 
 
