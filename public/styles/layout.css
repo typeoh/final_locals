@@ -184,6 +184,8 @@
   width: 60%;
   margin: auto;
   max-width: 40%; }
+  .add-card .modal-card-head, .add-card .modal-card-foot {
+    background-color: white !important; }
   .add-card .modal {
     overflow: visible;
     margin-left: 32%;
@@ -201,9 +203,12 @@
       min-height: 100% !important;
       padding-bottom: 40px; }
   .add-card .geosuggest {
-    margin: 0px; }
+    margin: 0px;
+    background-color: white; }
   .add-card .geosuggest__input {
     padding-left: 30px; }
+  .add-card .geosuggest_suggests {
+    position: relative !important; }
   .add-card .fa {
     padding-bottom: 6px; }
   .add-card input {
@@ -213,18 +218,17 @@
 
 .navbar {
   position: fixed;
+  min-height: 60px;
   top: 0;
   right: 0;
   left: 0;
   z-index: 200;
   padding: 5px 10px;
   padding-left: 10px; }
-  .navbar .navbar-logo-container {
-    padding-bottom: 20px; }
   .navbar .navbar-logo {
     position: fixed;
-    height: 35px;
-    width: 180px;
+    height: 30px;
+    width: 80px;
     margin-top: 7px;
     margin-left: 1rem; }
   .navbar .navbar-brand {
@@ -268,25 +272,24 @@
 
 .homepage-image {
   transition: all .1s ease-in-out !important;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin-top: -70px;
+  position: relative;
+  margin-top: -60px;
   z-index: -5;
   object-fit: cover;
-  width: auto;
-  min-width: 100%;
-  height: 87%;
-  min-height: 75%;
+  width: 100%;
+  max-width: 1400px;
+  max-height: 600px;
+  z-index: -100;
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
   -ms-backface-visibility: hidden; }
 
 .landing-content {
+  overflow: hidden;
   justify-content: center;
-  transition: all 0.7s ease-in-out;
-  margin: 15% 2% 14%; }
+  top: 11em;
+  width: 100%;
+  transition: all 0.7s ease-in-out; }
   .landing-content .input {
     border-color: #fba505 !important; }
     .landing-content .input:focus {
@@ -296,11 +299,11 @@
 
 .page-toggle {
   text-align: center;
-  margin: 20px 40px 20px;
+  margin: 15px 40px 20px;
   line-height: 28px; }
   .page-toggle h1 {
-    padding-top: 15px;
-    font-size: 1.3em; }
+    font-size: 1.4em;
+    font-weight: 400; }
   .page-toggle h2 {
     font-size: .9em;
     padding-bottom: 10px; }
@@ -350,7 +353,7 @@
   outline: none; }
 
 .geosuggest__suggests {
-  position: absolute;
+  position: relative;
   top: 100%;
   left: 0;
   right: 0;
@@ -449,6 +452,8 @@
             color: #00caba;
             cursor: pointer; }
       .favorites-container .slider-container .card .card-image img {
+        object-fit: cover;
+        width: 100%;
         height: 170px; }
       .favorites-container .slider-container .card .description {
         font-size: 9px;
@@ -475,27 +480,57 @@
   height: 300px;
   transition: 1s all ease-in-out; }
 
-.box {
-  border: 1px;
-  border-color: #CCCCCC;
-  border-style: solid;
-  border-radius: 10px;
-  width: 90%;
-  box-shadow: none;
-  font-size: 1em;
-  font-weight: 400;
-  transition: all 1s ease-in-out !important; }
-  .box li {
-    margin-left: 40px;
-    padding-left: 40px; }
-  .box:hover {
-    transition: all .2s ease !important;
-    border-color: #00caba;
-    cursor: pointer; }
-  .box .fa {
+.itinerary-cards-container {
+  margin: 25px 100px 25px 40px;
+  padding: 10px;
+  border: 1px #CCCCCC solid;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: white; }
+  .itinerary-cards-container .large-itinerary-image {
+    max-width: 200px;
+    height: 140px; }
+    .itinerary-cards-container .large-itinerary-image img {
+      object-fit: cover;
+      width: auto;
+      height: 100%; }
+  .itinerary-cards-container .small-itinerary-image {
+    max-width: 150px;
+    height: 110px; }
+    .itinerary-cards-container .small-itinerary-image img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%; }
+  .itinerary-cards-container .title {
+    padding-top: 3px;
+    font-size: 1.1em; }
+  .itinerary-cards-container .subtitle {
+    padding-top: 5px;
+    font-size: .8em;
+    color: #00caba;
+    margin-bottom: 8px; }
+  .itinerary-cards-container p {
+    font-size: .8em; }
+  .itinerary-cards-container .long-event {
+    height: 140px; }
+    .itinerary-cards-container .long-event img {
+      width: 140px;
+      height: 140px; }
+  .itinerary-cards-container .short-event {
+    height: 100px; }
+  .itinerary-cards-container .duration {
+    padding-top: 5px;
+    font-style: italic;
+    font-size: .7em; }
+  .itinerary-cards-container .itinerary-delete {
+    padding: 10px;
+    color: #CCCCCC;
+    float: right; }
+    .itinerary-cards-container .itinerary-delete:hover {
+      cursor: pointer;
+      color: #363636; }
+  .itinerary-cards-container .fa {
     color: #CCCCCC; }
-    .box .fa:hover {
-      color: pink; }
 
 .itinerary-container .filter {
   transition: all .3s ease-in-out !important; }
@@ -605,7 +640,7 @@
   .itinerary-container .columns .media-content.large {
     height: 10rem; }
   .itinerary-container .columns .fa {
-    color: #00caba; }
+    color: #CCCCCC; }
   .itinerary-container .columns .article.media.large {
     height: 10rem; }
   .itinerary-container .columns ul {
@@ -620,10 +655,10 @@
   .itinerary-container .set-date {
     padding-bottom: 8px; }
   .itinerary-container .itinerary-time {
-    width: 2%; }
+    width: 3%; }
     .itinerary-container .itinerary-time .fa {
-      padding-bottom: 8em;
-      font-size: 50px;
+      padding-bottom: 6em;
+      font-size: 60px;
       color: #333;
       font-weight: 1px; }
   .itinerary-container .welcome {
@@ -632,22 +667,6 @@
     margin-bottom: 10px; }
   .itinerary-container .box {
     margin: 10px; }
-
-.modal .modal-card {
-  width: 500px;
-  border-radius: 10px;
-  height: 300px;
-  border: 1px solid #FCB737; }
-.modal .modal-card-head {
-  background-color: white; }
-.modal .modal-card-body {
-  padding: 50px; }
-  .modal .modal-card-body .select {
-    margin: 5px; }
-.modal .modal-card-foot {
-  background-color: white; }
-.modal .button {
-  float: right; }
 
 .react-datepicker-popper[data-placement^="bottom"] .react-datepicker__triangle, .react-datepicker-popper[data-placement^="top"] .react-datepicker__triangle, .react-datepicker__year-read-view--down-arrow,
 .react-datepicker__month-read-view--down-arrow {
@@ -694,19 +713,53 @@
     border-top-color: #CCCCCC; }
 
 .button.calendar {
+  float: right;
   padding: 1rem;
   border: none; }
   .button.calendar:hover {
     border: none; }
 
-.modal .modal-card {
+.button.calendar {
+  height: 100%; }
+
+.calendar-set-time .modal h6 {
+  padding-top: 5px;
+  font-size: 1.2em;
+  margin-bottom: 10px; }
+.calendar-set-time .modal .modal-card {
+  border: 1px solid #CCCCCC;
+  border-radius: 10px;
+  padding-top: 1.5rem;
   height: 500px;
-  width: 2000px;
+  width: 450px;
+  background-color: white;
   border-color: #CCCCCC; }
-  .modal .modal-card .head {
+  .calendar-set-time .modal .modal-card .head {
     height: 100px; }
-.modal .modal-card-body {
-  padding: 30px; }
+  .calendar-set-time .modal .modal-card .input {
+    margin: 5px;
+    width: 20%;
+    border-color: #CCCCCC;
+    height: 31px;
+    font-size: 15px; }
+    .calendar-set-time .modal .modal-card .input:focus {
+      border-color: pink; }
+  .calendar-set-time .modal .modal-card .button {
+    margin-top: 5px;
+    border-color: #CCCCCC;
+    font-size: .87em;
+    padding: 1.2rem; }
+    .calendar-set-time .modal .modal-card .button:hover {
+      border-color: pink;
+      cursor: pointer; }
+.calendar-set-time .modal .modal-card-body {
+  padding: 20px;
+  padding-top: 5px; }
+.calendar-set-time .modal .select select {
+  margin: 5px;
+  margin-left: 0px;
+  padding: 5px 10px;
+  font-size: .85em; }
 
 .react-datepicker-wrapper {
   display: inline-block;
@@ -1076,9 +1129,16 @@
   .time .title {
     color: black;
     font-size: 12px; }
+  .time .time-set {
+    padding-left: 2rem; }
+    .time .time-set .column.time-input {
+      padding: 1.3rem; }
+      .time .time-set .column.time-input .input {
+        padding: 1rem;
+        width: 1rem; }
 
 .itinerary-container {
-  padding-top: 2rem; }
+  padding-top: 1rem; }
   .itinerary-container .it-card.column {
     padding-top: 0px; }
   .itinerary-container .start-time.column {
@@ -1089,12 +1149,34 @@
       border-bottom: #CCCCCC 0.2px solid;
       border-top: #CCCCCC 0.2px solid;
       padding: 10px; }
+  .itinerary-container .button.save {
+    height: 100%;
+    border: none;
+    float: right;
+    margin-left: 28px;
+    margin-top: 15px; }
+    .itinerary-container .button.save .icon.is-medium .fa:hover {
+      color: #00caba !important; }
+  .itinerary-container .modal.button {
+    padding: 1.5rem; }
+
+.export {
+  margin: 15px 40px;
+  justify-content: center;
+  text-align: center; }
+
+.calendar {
+  margin-right: 30px; }
+
+.itinerary-card-title {
+  font-size: 1.2em; }
 
 .button.export {
-  padding: 1rem;
+  height: 100%;
   border: none;
-  padding: 2rem;
-  float: right; }
+  float: right;
+  margin-left: 20px;
+  margin-top: 15px; }
 
 .is-rotated {
   transform: rotate(180deg); }
